@@ -153,6 +153,11 @@ nav{
 }
 .nav-cta:hover{background:var(--p2) !important;box-shadow:0 0 0 2px var(--adim) !important}
 .nav-cta::after{display:none !important}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{width:24px;height:24px;stroke:var(--p);stroke-width:2}
+@media(max-width:960px){
+  .nav-mobile{display:block}
+}
 
 /* ══════════════════════════════════════════════
    PAGES
@@ -338,10 +343,10 @@ nav{
 
 /* ── ABOUT ── */
 .about{
-  padding:120px 80px;
+  padding:80px 5%;
   background:var(--w);
   display:grid;grid-template-columns:1fr 1fr;
-  gap:100px;align-items:center;
+  gap:60px;align-items:center;
 }
 .about-text p+p{margin-top:18px}
 
@@ -382,12 +387,12 @@ nav{
 .as-lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
 
 /* ── PRODUCTS GRID (home) ── */
-.products{padding:120px 80px;background:var(--s)}
-.products-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:64px}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.products{padding:80px 5%;background:var(--s)}
+.products-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 .pc{ /* product card */
-  background:var(--w);padding:40px 32px;
+  background:var(--w);padding:32px 24px;
   position:relative;overflow:hidden;
   cursor:pointer;transition:all .4s var(--tx);
   display:block;color:inherit;
@@ -430,9 +435,9 @@ nav{
 
 /* ── TECH SECTION ── */
 .tech{
-  background:var(--p);padding:120px 80px;
+  background:var(--p);padding:80px 5%;
   display:grid;grid-template-columns:1fr 1.15fr;
-  gap:100px;align-items:center;
+  gap:60px;align-items:center;
 }
 .tech .t-eye{color:var(--a)}
 .tech .t-eye::before{background:var(--a)}
@@ -497,12 +502,12 @@ nav{
 @keyframes grow{from{width:0}}
 
 /* ── SECTORS ── */
-.sectors{padding:120px 80px;background:var(--w)}
-.sectors-intro{text-align:center;max-width:520px;margin:0 auto 64px}
+.sectors{padding:80px 5%;background:var(--w)}
+.sectors-intro{text-align:center;max-width:520px;margin:0 auto 48px}
 .sectors-intro .t-eye{justify-content:center}
-.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .sc{ /* sector card */
-  background:var(--sl);padding:48px 36px;
+  background:var(--sl);padding:32px 24px;
   position:relative;overflow:hidden;transition:all .4s var(--tx);
 }
 .sc:hover{background:var(--p);transform:translateY(-4px)}
@@ -534,9 +539,9 @@ nav{
 
 /* ── CTA / CONTACT ── */
 .cta{
-  background:var(--p);padding:100px 80px;
+  background:var(--p);padding:80px 5%;
   display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:start;
+  gap:48px;align-items:start;
   position:relative;overflow:hidden;
 }
 .cta::before{
@@ -591,10 +596,10 @@ nav{
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 
 /* ── FOOTER ── */
-footer{background:var(--pd);padding:64px 80px 28px}
+footer{background:var(--pd);padding:48px 5% 28px}
 .footer-top{
-  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
-  gap:56px;padding-bottom:48px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:40px;padding-bottom:40px;
   border-bottom:1px solid rgba(255,255,255,.06);
   margin-bottom:28px;
 }
@@ -1333,22 +1338,62 @@ footer{background:var(--pd);padding:64px 80px 28px}
 /* ══════════════════════════════════════════════
    RESPONSIVE (basic)
 ══════════════════════════════════════════════ */
+@media(max-width:1200px){
+  .products-grid,.sectors-grid,.values-grid,.tec-pillars-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:960px){
   nav{padding:0 20px}
   .nav-links{display:none}
   .hero,.about,.tech,.cta,.prod-hero,.emp-hero,.emp-strip-inner,.tec-hero,.tec-deepdive,.tec-i40,.cli-hero{grid-template-columns:1fr}
   .hero-right,.tech-right{display:none}
-  .hero-left,.about,.tech,.products,.sectors,.cta,.prod-specs,.prod-features,.prod-related,.timeline,.values,.stats-band,.emp-hero,.catalog,.tec-pillars,.tec-deepdive,.tec-i40,.cli-cases,.cli-sectors,.cli-logos,.cli-cta{padding-left:20px;padding-right:20px}
+  .hero-left,.about,.tech,.products,.sectors,.cta,.prod-specs,.prod-features,.prod-related,.timeline,.values,.stats-band,.emp-hero,.catalog,.tec-pillars,.tec-deepdive,.tec-i40,.cli-cases,.cli-sectors,.cli-logos,.cli-cta{padding-left:5%;padding-right:5%}
   .products-grid,.sectors-grid,.prod-specs-grid,.values-grid,.related-grid,.cat-grid,.tec-pillars-grid,.cases-grid,.cli-sectors-grid{grid-template-columns:1fr}
   .stats-row,.tec-counters{grid-template-columns:1fr 1fr}
   .catalog-layout{flex-direction:column}
   .cat-sidebar{width:100%;position:static}
-  .footer-top{grid-template-columns:1fr 1fr}
-  footer{padding:40px 20px 24px}
-  .breadcrumb,.prod-hero,.prod-specs,.prod-features,.prod-related{padding-left:20px;padding-right:20px}
+  .footer-top{grid-template-columns:repeat(2,1fr)}
+  footer{padding:40px 5% 24px}
+  .breadcrumb,.prod-hero,.prod-specs,.prod-features,.prod-related{padding-left:5%;padding-right:5%}
   .i40-grid{grid-template-columns:1fr}
   .logos-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-title{font-size:clamp(48px,10vw,80px)}
+  .hero-title-accent{font-size:clamp(36px,8vw,60px)}
+  .hero-left{padding:48px 5%}
+  .blueprint,.form-card{padding:24px}
+  .prod-hero{gap:40px;padding:40px 5%}
+  .prod-img-wrap{height:320px}
+  .emp-hero,.tec-hero{padding:60px 5%}
 }
+@media(max-width:600px){
+  .hero-left{padding:32px 4%}
+  .hero-title{font-size:clamp(36px,12vw,56px)}
+  .hero-title-accent{font-size:clamp(28px,10vw,42px)}
+  .hero-desc{font-size:14px}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .hero-card{max-width:100%}
+  .hero-stats-grid{grid-template-columns:1fr}
+  .about,.products,.sectors,.cta,.timeline,.values,.stats-band,.emp-strip,.cli-hero,.cli-logos,.cli-cases,.cli-sectors,.cli-cta{padding:48px 4%}
+  .t-display{font-size:clamp(40px,10vw,56px)}
+  .t-headline{font-size:clamp(24px,6vw,36px)}
+  .t-section{font-size:clamp(18px,4vw,24px)}
+  .products-grid,.sectors-grid,.cat-grid,.values-grid,.tec-pillars-grid,.cases-grid,.cli-sectors-grid,.related-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .cta{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .prod-hero{grid-template-columns:1fr;padding:32px 4%}
+  .prod-specs{padding:48px 4%}
+  .prod-specs-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-features,.prod-related{padding:48px 4%}
+  .feat-grid{grid-template-columns:1fr;gap:32px}
+  .emp-hero,.tec-hero{grid-template-columns:1fr;padding:48px 4%}
+  .tec-deepdive{grid-template-columns:1fr;padding:48px 4%}
+  .cli-cta-actions{flex-direction:column;align-items:center}
+  .prod-actions{flex-direction:column}
+  .catalog{padding:48px 4%}
+  .cat-grid{grid-template-columns:1fr}
+}
+</style>
 </style>
 </head>
 <body>
@@ -1361,7 +1406,7 @@ footer{background:var(--pd);padding:64px 80px 28px}
     </div>
     Pondus
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#" id="nl-home" class="active" onclick="show('home');return false">Início</a></li>
     <li><a href="#" id="nl-catalog" onclick="show('catalog');return false">Produtos</a></li>
     <li><a href="#" id="nl-tecnologia" onclick="show('tecnologia');return false">Tecnologia</a></li>
@@ -1369,6 +1414,9 @@ footer{background:var(--pd);padding:64px 80px 28px}
     <li><a href="#" id="nl-clientes" onclick="show('clientes');return false">Clientes</a></li>
     <li><a href="#" class="nav-cta" onclick="show('home');setTimeout(()=>document.getElementById('home-cta').scrollIntoView({behavior:'smooth'}),100);return false">Solicitar Orçamento</a></li>
   </ul>
+  <button class="nav-mobile" onclick="toggleMenu()">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
 </nav>
 
 <!-- ════════════════════════════════════════
